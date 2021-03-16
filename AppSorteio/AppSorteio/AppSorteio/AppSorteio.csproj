@@ -19,4 +19,10 @@
     <Folder Include="Models\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Import\rd-http-adrianobinhara-com-br-lp-pre-lancamento-de-curso.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
