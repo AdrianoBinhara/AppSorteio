@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSorteio.iOS", "AppSortei
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSorteio", "AppSorteio\AppSorteio\AppSorteio.csproj", "{A67E51B1-879B-4DAD-ACEF-377A93A615AC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSorteio.Test", "AppSorteio.Test\AppSorteio.Test.csproj", "{0679BAF0-358A-4D46-8FB2-E7068504E215}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,18 @@ Global
 		{A67E51B1-879B-4DAD-ACEF-377A93A615AC}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{A67E51B1-879B-4DAD-ACEF-377A93A615AC}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{A67E51B1-879B-4DAD-ACEF-377A93A615AC}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{0679BAF0-358A-4D46-8FB2-E7068504E215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0679BAF0-358A-4D46-8FB2-E7068504E215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0679BAF0-358A-4D46-8FB2-E7068504E215}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{0679BAF0-358A-4D46-8FB2-E7068504E215}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{0679BAF0-358A-4D46-8FB2-E7068504E215}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{0679BAF0-358A-4D46-8FB2-E7068504E215}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{0679BAF0-358A-4D46-8FB2-E7068504E215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0679BAF0-358A-4D46-8FB2-E7068504E215}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0679BAF0-358A-4D46-8FB2-E7068504E215}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{0679BAF0-358A-4D46-8FB2-E7068504E215}.Release|iPhone.Build.0 = Release|Any CPU
+		{0679BAF0-358A-4D46-8FB2-E7068504E215}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{0679BAF0-358A-4D46-8FB2-E7068504E215}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

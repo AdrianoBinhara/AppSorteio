@@ -12,6 +12,7 @@ namespace AppSorteio.Business
         private List<Person> LstPerson { get; set; } 
         public PrizeDraw()
         {
+            LstPerson = new List<Person>();
             var file = new System.IO.StreamReader(@"Import/rd-http-adrianobinhara-com-br-lp-pre-lancamento-de-curso.csv");
             var line = "";
             var counter = 0;
@@ -37,7 +38,7 @@ namespace AppSorteio.Business
         }
         public Person PrizeDrawPerson()
         {
-            var ran = new Random(LstPerson.Max(m => m.Index)).Next();
+            var ran = new Random().Next(LstPerson.Max(m => m.Index));
             var result = LstPerson.Where(w => w.Index == ran).FirstOrDefault();
             return result;
         }
