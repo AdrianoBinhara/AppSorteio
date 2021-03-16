@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 
 namespace AppSorteio.Business
@@ -13,7 +14,16 @@ namespace AppSorteio.Business
         public PrizeDraw()
         {
             LstPerson = new List<Person>();
-            var file = new System.IO.StreamReader(@"Import/rd-http-adrianobinhara-com-br-lp-pre-lancamento-de-curso.csv");
+            //var file = new System.IO.StreamReader(@"Import/rd-http-adrianobinhara-com-br-lp-pre-lancamento-de-curso.csv");
+            //var teste = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "rd-http-adrianobinhara-com-br-lp-pre-lancamento-de-curso.csv");
+            
+
+            var assembly = Assembly.GetExecutingAssembly();
+            var resourceName = "AppSorteio.rd-http-adrianobinhara-com-br-lp-pre-lancamento-de-curso.csv";
+
+            var stream = assembly.GetManifestResourceStream(resourceName);
+            var file = new System.IO.StreamReader(stream);
+
             var line = "";
             var counter = 0;
             while ((line = file.ReadLine()) != null)
