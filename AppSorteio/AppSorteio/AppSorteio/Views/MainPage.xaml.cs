@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppSorteio.Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -13,6 +14,13 @@ namespace AppSorteio
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            PrizeDraw person = new PrizeDraw();
+            var user = person.PrizeDrawPerson();
+            lbNome.Text = user.UserName;
         }
     }
 }
