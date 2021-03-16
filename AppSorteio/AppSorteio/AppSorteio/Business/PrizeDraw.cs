@@ -13,28 +13,31 @@ namespace AppSorteio.Business
         public PrizeDraw()
         {
             LstPerson = new List<Person>();
-            var file = new System.IO.StreamReader(@"Import/rd-http-adrianobinhara-com-br-lp-pre-lancamento-de-curso.csv");
+           //var file = new StreamReader(@"C:\Users\M41956\Downloads\rd-http-adrianobinhara-com-br-lp-pre-lancamento-de-curso (2)");
             var line = "";
             var counter = 0;
-            while ((line = file.ReadLine()) != null)
+            using (StreamReader sr = new StreamReader(@"D:\rd-http-adrianobinhara-com-br-lp-pre-lancamento-de-curso.csv"))
             {
-                if (counter  == 0)
+                while ((line = sr.ReadLine()) != null)
                 {
+                    if (counter == 0)
+                    {
+                        counter++;
+                        continue;
+                    }
+                    var splitLine = line.Split(',');
+                    LstPerson.Add(new Person()
+                    {
+                        Index = counter,
+                        Email = splitLine[0],
+                        Name = splitLine[1],
+                        UserName = splitLine[2]
+                    });
                     counter++;
-                    continue;
                 }
-                var splitLine = line.Split(',');
-                LstPerson.Add(new Person()
-                {
-                    Index = counter,
-                    Email = splitLine[0],
-                    Name = splitLine[1],
-                    UserName = splitLine[2]
-                });
-                counter++;
+                sr.Close();
             }
-
-            file.Close();
+            
         }
         public Person PrizeDrawPerson()
         {

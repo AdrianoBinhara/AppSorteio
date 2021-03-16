@@ -18,9 +18,9 @@ namespace AppSorteio
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            PrizeDraw person = new PrizeDraw();
-            var user = person.PrizeDrawPerson();
-            lbNome.Text = user.UserName;
+            //PrizeDraw person = new PrizeDraw();
+            //var user = person.PrizeDrawPerson();
+            //lbNome.Text = user.UserName;
         }
     }
 }
