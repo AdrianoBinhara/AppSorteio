@@ -10,13 +10,13 @@ namespace AppSorteio.Business
 {
     public class PrizeDraw
     {
-        private List<Person> LstPerson { get; set; } 
+        private List<Person> LstPerson { get; set; }
         public PrizeDraw()
         {
             LstPerson = new List<Person>();
             //var file = new System.IO.StreamReader(@"Import/rd-http-adrianobinhara-com-br-lp-pre-lancamento-de-curso.csv");
             //var teste = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "rd-http-adrianobinhara-com-br-lp-pre-lancamento-de-curso.csv");
-            
+
 
             var assembly = Assembly.GetExecutingAssembly();
             var resourceName = "AppSorteio.rd-http-adrianobinhara-com-br-lp-pre-lancamento-de-curso.csv";
@@ -26,28 +26,27 @@ namespace AppSorteio.Business
 
             var line = "";
             var counter = 0;
-            using (StreamReader sr = new StreamReader(@"D:\rd-http-adrianobinhara-com-br-lp-pre-lancamento-de-curso.csv"))
+
+
+            while ((line = file.ReadLine()) != null)
             {
-                while ((line = sr.ReadLine()) != null)
+                if (counter == 0)
                 {
-                    if (counter == 0)
-                    {
-                        counter++;
-                        continue;
-                    }
-                    var splitLine = line.Split(',');
-                    LstPerson.Add(new Person()
-                    {
-                        Index = counter,
-                        Email = splitLine[0],
-                        Name = splitLine[1],
-                        UserName = splitLine[2]
-                    });
                     counter++;
+                    continue;
                 }
-                sr.Close();
+                var splitLine = line.Split(',');
+                LstPerson.Add(new Person()
+                {
+                    Index = counter,
+                    Email = splitLine[0],
+                    Name = splitLine[1],
+                    UserName = splitLine[2]
+                });
+                counter++;
             }
-            
+            file.Close();
+
         }
         public Person PrizeDrawPerson()
         {
@@ -55,5 +54,10 @@ namespace AppSorteio.Business
             var result = LstPerson.Where(w => w.Index == ran).FirstOrDefault();
             return result;
         }
+        public string PrizeCountTotal()
+        {
+            return LstPerson.Max(m => m.Index).ToString();
+        }
+            
     }
 }

@@ -11,6 +11,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="rd-http-adrianobinhara-com-br-lp-pre-lancamento-de-curso.csv" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Include="rd-http-adrianobinhara-com-br-lp-pre-lancamento-de-curso.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>

@@ -11,16 +11,26 @@ namespace AppSorteio
 {
     public partial class MainPage : ContentPage
     {
+        public string TotalParticipants { get; set; }
+        private PrizeDraw Person { get; set; }
         public MainPage()
         {
             InitializeComponent();
+            Person = new PrizeDraw();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            TotalParticipants = Person.PrizeCountTotal();
+            lbTotalParticipants.Text = TotalParticipants;
+        }
         private void Button_Clicked(object sender, EventArgs e)
         {
-            //PrizeDraw person = new PrizeDraw();
-            //var user = person.PrizeDrawPerson();
-            //lbNome.Text = user.UserName;
+
+            var user = Person.PrizeDrawPerson();
+            lbNome.Text = user.UserName;
+
         }
     }
 }
